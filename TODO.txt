@@ -1,0 +1,4 @@
+- install dependencies  [X]
+- build bootloader	[Will be using GRUB]
+- build kernel		[ ]
+- build simple shell	[ ]
