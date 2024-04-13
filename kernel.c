@@ -10,8 +10,8 @@
 #error "Use an ix86-elf compiler please"
 #endif
 
-#define COLOR 0x07 // fg,bg: white,black
-#define BLINK 0x87 // blink effect
+#define COLOR 0x03 // fg,bg: white,black
+#define BLINK 0x07 // blink effect
 #define VGA_WIDTH 80
 #define VGA_HEIGHT 25
 
@@ -56,7 +56,7 @@ void k_update_cursor(unsigned int col, unsigned int row)
 {
   unsigned int index = (col + row * VGA_WIDTH) * 2;
   char *vidmem = (char *) 0xB8000;
-  vidmem[index] = '|';
+  vidmem[index] = '_';
   vidmem[index+1] = BLINK;
 }
 
@@ -71,9 +71,8 @@ size_t k_strlen(char *str)
 
 void kernel_main(void)
 {
-  unsigned int line = 0;
-  char *message = "Hello from FTC kernel !!";
   k_clear_screen();
-  k_print(message, line);
-  k_update_cursor(k_strlen(message), line);
+  k_print("Hello, FTC Kernel !\n", 0);
+  k_print("[cipherat]> Do you hear me captain?", 1);
+  k_print("[captain]> Roger that.", 2);
 }

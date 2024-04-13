@@ -14,8 +14,10 @@ CCOUT		= -o ${kernel_out}
 
 linker		= linker.ld
 os_out		= ftcos.bin
-LD		= ${BINPATH}/i686-elf-ld
-LDFLAGS		= -T ${linker} -o {os_out} -ffreestanding -O2 -nostdlib ${bootloader_out} ${kernel_out} -lgcc
+LD		= ${BINPATH}/i686-elf-ld #not used
+LDFLAGS		= -T ${linker} -o bin/${os_out} -ffreestanding -O2 -nostdlib ${bootloader_out} ${kernel_out} -lgcc
+
+OSDIR		= ./isodir/boot/
 
 build:
 	${ASM} ${bootloader} ${ASMFLAGS} ${ASMOUT}
@@ -23,4 +25,6 @@ build:
 	${CC} ${LDFLAGS}
 
 boot:
+	cp bin/${os_out} ${OSDIR}
+	grub-mkrescue -o ftcos.iso isodir
 	qemu-system-i386 -cdrom ftcos.iso

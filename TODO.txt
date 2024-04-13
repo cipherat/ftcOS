@@ -1,4 +1,19 @@
+for system:
 - install dependencies  [X]
 - build bootloader	[Will be using GRUB]
-- build kernel		[ ]
+- build kernel		[X]
 - build simple shell	[ ]
+- first cli command	[ ]
+- make filesystem	[ ]
+
+
+for project:
+- add `make clean`  [ ]
+
+
+for me:
+- understand different CPU modes	[ ]
+- understand bootloaders		[ ]
+- understand grub & multibooting	[ ]
+- understand VGA controls		[ ]
+- learn to manipulate I/O systems	[ ]

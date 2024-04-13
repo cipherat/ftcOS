@@ -1,5 +1,7 @@
-
-ftcos.bin
-ftcos.iso
-boot.o
-kernel.o
+*.o
+*.bin
+*.iso
+TODO.txt
+bin/
+isodir/
+dependencies/
