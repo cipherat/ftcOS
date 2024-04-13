@@ -1,7 +1,0 @@
-*.o
-*.bin
-*.iso
-TODO.txt
-bin/
-isodir/
-dependencies/
